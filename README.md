@@ -6,6 +6,7 @@ Enigma
 
 ## Content
 * [Getting_Started](#getting_started)
+* [Compiling](#compiling)
 * [Run_Enigma](#run_enigma)
     * Basic Function
     * Special Feature  
@@ -18,21 +19,31 @@ Enigma
 ***
 ## Getting_Started
 ### Prerequisites
-* For Windows 7+  **ONLY**
-* DEV C++ 5.11(for editing)
+* For linux **ONLY**
+* gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)
+* GUN Make 4.1
 
 ### Installing  
-If you haven't installed DEV C++ on your computer, here is the URL link to [Download DEV C++](https://sourceforge.net/projects/orwelldevcpp)
-
+Clone this repo by using
+```
+$ git clone https://github.com/zlxlty/Enigma_Machine.git
+```
+***
+## Compiling
+Enter the `src` folder and type in
+```
+$ make
+```
+Delete all the object files by using
+```
+$ make clean_objs
+```
 ***
 ## Run_Enigma
 ### Basic Function
-To use the `Enigma simulator`, you just have to `double click` the `Enigma.exe`  
-A terminal-like window will appear with output as followed:
+To use the `Enigma simulator`, you just have to compile first and use terminal and type in:
 ```
-ENIGMA MACHINE
-
-Enter the Sequnce of the Rotor:
+$ make run_e
 ```
 As most of other ciphers, `Enigma` requires key to encrypt and and decrypt messages  
 I am simulating an early version of `Enigma` which has three keys:
