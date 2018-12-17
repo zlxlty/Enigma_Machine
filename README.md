@@ -41,9 +41,13 @@ $ make clean_objs
 ***
 ## Run_Enigma
 ### Basic Function
-To use the `Enigma simulator`, you just have to compile first and use terminal and type in:
+To use the encryption function in `Enigma simulator`, you just have to compile first and use terminal and type in:
 ```
 $ make run_e
+```
+To use the decryption function, type in
+```
+$ make run_d
 ```
 As most of other ciphers, `Enigma` requires key to encrypt and and decrypt messages  
 I am simulating an early version of `Enigma` which has three keys:

@@ -1,8 +1,8 @@
 /*
 * =================================================
 *       Filename:  main.c
-*        Version:  1.0.0
-*        Created:  12/15/18 09:48:25
+*        Version:  1.0.1
+*        Created:  12/17/18 13:22:41
 *       Compiler:  gcc
 *         Coding:  UTF-8
 *         Author:  Tianyi Lu
