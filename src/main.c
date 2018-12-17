@@ -48,7 +48,7 @@ int main(int argc, char const *argv[]) {
             }
 
 
-    Key *pkey = KeyInput(flags.filein);
+    Key *pkey = KeyInput(flags.filein, "key.txt");
     char plaintxt;
     char ciphrtxt;
 
@@ -71,7 +71,7 @@ int main(int argc, char const *argv[]) {
             plaintxt = PlugboardEncryption(pkey->plugboard, plaintxt);
             plaintxt = RotorsEncryption(pEnigma, plaintxt);
             ciphrtxt = PlugboardEncryption(pkey->plugboard, plaintxt);
-            printf("Ciphertext: %c\n", ciphrtxt);
+            printf("\nCiphertext: %c\n", ciphrtxt);
             RemoveRotorGroup(pEnigma);
             KeyRotation(pkey->pos);
         }
@@ -84,7 +84,7 @@ int main(int argc, char const *argv[]) {
         while (1)
         {
             char *pciphrtxt;
-            printf("Enter the ciphertext: ");
+            printf("\nEnter the ciphertext: ");
             pciphrtxt = StringInput(1000);
 
             if (pciphrtxt[0] == '-')
@@ -97,7 +97,6 @@ int main(int argc, char const *argv[]) {
 
             strcpy(pkey->pos, ptmppos);
 
-            printf("%s\n", pkey->pos);
             for (i = 0; i < strlen(pciphrtxt); i++)
             {
                 Rotorgroup* pEnigma = SetEnigmaRotors(pkey->order, pkey->pos);
@@ -108,7 +107,7 @@ int main(int argc, char const *argv[]) {
                 KeyRotation(pkey->pos);
             }
 
-            printf("Plaintext: %s\n", pciphrtxt);
+            printf("\nPlaintext: %s\n", pciphrtxt);
             free((void *)pciphrtxt);
         }
     }

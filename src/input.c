@@ -1,7 +1,7 @@
 /*
 * =================================================
 *       Filename:  input.c
-*        Version:  1.0.0
+*        Version:  1.0.1
 *        Created:  12/15/18 09:48:25
 *       Compiler:  gcc
 *         Coding:  UTF-8
@@ -10,78 +10,90 @@
 */
 #include "input.h"
 
-char *RotorPosInput(int filein)
+char *RotorPosInput(FILE *fp)
 {
     char c;
     int i = 1;
     char *tmpch = (char *)malloc(sizeof(char)*5);
     tmpch[0] = 'A';
 
-    if (filein == 0)
-        printf("Enter a three-digit Key: ");
+    if (fp == stdin)
+        printf("\nEnter a three-digit Key: ");
 
-    while (((c = getchar()) != EOF) && (i <= 3))
+    while (((c = getc(fp)) != EOF) && (i <= 3))
     {
-        if (c == ' ' || c == '\t' || c == '\n')
-            continue;
-
-        tmpch[i++] = toupper(c);
+        if (isalpha(c))
+            tmpch[i++] = toupper(c);
     }
-
     tmpch[i] = '\0';
 
     return tmpch;
 }
 
-char *PlugboardInput(int filein)
+char *PlugboardInput(FILE *fp)
 {
     char c;
     int i = 0;
     char *tmpch = (char *)malloc(sizeof(char)*13);
 
-    if (filein == 0)
-        printf("Enter a 12-digit Plugboard: ");
+    if (fp == stdin)
+        printf("\nEnter a 12-digit Plugboard: ");
 
-    while (((c = getchar()) != EOF) && (i <= 11))
+    while (((c = getc(fp)) != EOF) && (i <= 11))
     {
-        if (c == ' ' || c == '\t' || c == '\n')
-            continue;
-
-        tmpch[i++] = toupper(c);
+        if (isalpha(c))
+            tmpch[i++] = toupper(c);
     }
-
     tmpch[i] = '\0';
 
     return tmpch;
 }
 
-char *RotorOrderInput(int filein)
+char *RotorOrderInput(FILE *fp)
 {
     char c;
     int i = 0;
     char *tmppos = (char *)malloc(sizeof(char)*4);
 
-    if (filein == 0)
-        printf("Enter rotors' position: ");
-
-    while (((c = getchar()) != EOF) && (i <= 2))
+    if (fp == stdin)
+        printf("\nEnter rotors' position: ");
+        
+    while (((c = getc(fp)) != EOF) && (i <= 2))
     {
-        if (c == ' ' || c == '\t' || c == '\n' || c < '1' || c > '3')
-            continue;
-
-        tmppos[i++] = c;
+        if (c > '1' || c < '3')
+            tmppos[i++] = c;
     }
+
+    tmppos[i] = '\0';
 
     return tmppos;
 }
 
-Key *KeyInput(int filein)
+Key *KeyInput(int filein, char *filename)
 {
     Key *pkey = (Key *)malloc(sizeof(Key));
 
-    pkey->order = RotorOrderInput(filein);
-    pkey->pos = RotorPosInput(filein);
-    pkey->plugboard = PlugboardInput(filein);
+    if (filein == 0)
+    {
+        pkey->order = RotorOrderInput(stdin);
+        pkey->pos = RotorPosInput(stdin);
+        pkey->plugboard = PlugboardInput(stdin);
+    }
+    else if (filein == 1)
+    {
+        FILE *fp;
+
+        if ((fp = fopen(filename, "r")) == NULL)
+        {
+            fprintf(stderr, ERRORMSG, "can not open file");
+            return NULL;
+        } else {
+            pkey->order = RotorOrderInput(fp);
+            pkey->pos = RotorPosInput(fp);
+            pkey->plugboard = PlugboardInput(fp);
+        }
+
+    }
 
     return pkey;
 }

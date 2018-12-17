@@ -13,6 +13,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <ctype.h>
 #include "settings.h"
 
@@ -22,10 +23,10 @@ typedef struct _key {
     char *plugboard;
 } Key;
 
-char *RotorPosInput(int filein);
-char *PlugboardInput(int filein);
-char *RotorOrderInput(int filein);
-Key *KeyInput(int filein);
+char *RotorPosInput(FILE *);
+char *PlugboardInput(FILE *);
+char *RotorOrderInput(FILE *);
+Key *KeyInput(int filein, char *filename);
 char TextInput(void);
 char *StringInput(int size);
 void KeyRotation(char *key);

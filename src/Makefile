@@ -20,7 +20,7 @@ rotorgroup.o : rotorgroup.c rotorgroup.h linked_list.h rotors.h settings.h
 
 input.o : input.c input.h settings.h
 
-.PHONY : clean_objs run_e run_d
+.PHONY : clean_objs run_e run_d run_fd
 
 clean_objs :
 	rm $(objs)
@@ -30,3 +30,6 @@ run_e :
 
 run_d :
 	./Enigma -d
+
+run_fd :
+	./Enigma -fd

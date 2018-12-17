@@ -12,7 +12,6 @@
 #define _MAIN_H_
 
 #include <stdio.h>
-#include <unistd.h>
 #include "settings.h"
 #include "linked_list.h"
 #include "rotors.h"
