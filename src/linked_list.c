@@ -116,7 +116,7 @@ int RemoveRotor(Rotorhead *pRh)
     do {
         pprev = ptemp;
         ptemp = ptemp->down;
-        pprev->down = NULL;
+        pprev->down = pprev->left = pprev->right = NULL;
         free((void *)pprev);
     } while (ptemp != pRh->down);
 

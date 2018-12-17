@@ -23,6 +23,7 @@ int main(int argc, char const *argv[]) {
         exit(1);
     }
 
+    int i;
     char c;
     const char *prog = argv[0];
 
@@ -71,14 +72,46 @@ int main(int argc, char const *argv[]) {
             plaintxt = RotorsEncryption(pEnigma, plaintxt);
             ciphrtxt = PlugboardEncryption(pkey->plugboard, plaintxt);
             printf("Ciphertext: %c\n", ciphrtxt);
+            RemoveRotorGroup(pEnigma);
             KeyRotation(pkey->pos);
         }
     }
 
-    // TODO if (flags.decrypt)
-    // {
-    //
-    // }
+    else if (flags.decrypt)
+    {
+        char *ptmppos = (char *)malloc(sizeof(char)*5);
+        strcpy(ptmppos, pkey->pos);
+        while (1)
+        {
+            char *pciphrtxt;
+            printf("Enter the ciphertext: ");
+            pciphrtxt = StringInput(1000);
+
+            if (pciphrtxt[0] == '-')
+            {
+                system("clear");
+                printf("Thanks For Using Enigma\n");
+                sleep(1);
+                return 0;
+            }
+
+            strcpy(pkey->pos, ptmppos);
+
+            printf("%s\n", pkey->pos);
+            for (i = 0; i < strlen(pciphrtxt); i++)
+            {
+                Rotorgroup* pEnigma = SetEnigmaRotors(pkey->order, pkey->pos);
+                pciphrtxt[i] = PlugboardEncryption(pkey->plugboard, pciphrtxt[i]);
+                pciphrtxt[i] = RotorsEncryption(pEnigma, pciphrtxt[i]);
+                pciphrtxt[i] = PlugboardEncryption(pkey->plugboard, pciphrtxt[i]);
+                RemoveRotorGroup(pEnigma);
+                KeyRotation(pkey->pos);
+            }
+
+            printf("Plaintext: %s\n", pciphrtxt);
+            free((void *)pciphrtxt);
+        }
+    }
 
     return 0;
 }

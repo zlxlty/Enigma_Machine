@@ -27,6 +27,7 @@ char *PlugboardInput(int filein);
 char *RotorOrderInput(int filein);
 Key *KeyInput(int filein);
 char TextInput(void);
+char *StringInput(int size);
 void KeyRotation(char *key);
 
 #endif

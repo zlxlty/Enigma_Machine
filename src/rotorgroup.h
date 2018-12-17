@@ -24,6 +24,7 @@ typedef struct _rotorgroup {
 } Rotorgroup;
 
 Rotorgroup *InitRotorGroup();
+void RemoveRotorGroup(Rotorgroup *pRg);
 Rotorgroup *SetEnigmaRotors(const char pos[3], const char key[4]);
 char RightEncrypt(Rotorgroup *pRg, int index, char lttr);
 char LeftEncrypt(Rotorgroup *pRg, int index, char lttr);

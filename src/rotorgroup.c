@@ -24,6 +24,21 @@ Rotorgroup *InitRotorGroup()
     return pRg;
 }
 
+void RemoveRotorGroup(Rotorgroup *pRg)
+{
+    int i;
+
+    for (i = 0; i <= 3; i++)
+    {
+        RemoveRotor(pRg->pAlphts[i]);
+        pRg->pAlphts[i] = NULL;
+        RemoveRotor(pRg->pCiphts[i]);
+        pRg->pCiphts[i] = NULL;
+    }
+
+    free((void *)pRg);
+}
+
 Rotorgroup *SetEnigmaRotors(const char pos[3], const char key[4])
 {
     Rotorgroup *pRg = InitRotorGroup();

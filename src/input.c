@@ -89,11 +89,40 @@ Key *KeyInput(int filein)
 char TextInput()
 {
     char c;
-    while (((c = getchar()) == EOF) || c == ' ' || c == '\t' || c == '\n' || isalpha(c) == 0)
+    while (((c = getchar()) == EOF) || isalpha(c) == 0)
         if (c == '-')
             return c;
 
     return toupper(c);
+}
+
+char *StringInput(int size)
+{
+    int i = 0;
+    char *str = (char *)malloc(sizeof(char)*size);
+    char c;
+    while ((c = getchar()) != '-' && i < size-1)
+    {
+        // putchar(c);
+        if (c != '\n' && isalpha(c) == 0)
+            continue;
+        // printf("Hello\n");
+        if (c == '\n')
+        {
+            str[i] = '\0';
+            return str;
+        }
+
+        // printf("Hello\n");
+        str[i++] = toupper(c);
+    }
+
+    if (c == '-')
+    {
+        str[0] = c;
+        str[1] = '\0';
+        return str;
+    }
 }
 
 void KeyRotation(char *key)
@@ -125,7 +154,7 @@ int main(int argc, char const *argv[]) {
     // printf("%c\n", ch);
     // temp = KeyInput(0);
     // printf("%s\n", temp);
-    temp = RotorOrderInput(0);
+    temp = StringInput(1000);
     printf("%s\n", temp);
 
     // for (i = 0; i < 1000; i++)
@@ -133,9 +162,9 @@ int main(int argc, char const *argv[]) {
     //     KeyRotation(temp);
     //     printf("%s\n", temp);
     // }
-
-    temp = PlugboardInput(0);
-    printf("%s\n", temp);
+    //
+    // temp = PlugboardInput(0);
+    // printf("%s\n", temp);
     return 0;
 }
 

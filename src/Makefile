@@ -27,3 +27,6 @@ clean_objs :
 
 run_e :
 	./Enigma -e
+
+run_d :
+	./Enigma -d

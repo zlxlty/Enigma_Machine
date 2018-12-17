@@ -19,6 +19,8 @@
 #include "rotorgroup.h"
 #include "input.h"
 
+#define MAXLEN 1000
+
 struct {
     unsigned int encrypt : 1;
     unsigned int decrypt : 1;
