@@ -57,7 +57,7 @@ char *RotorOrderInput(FILE *fp)
 
     if (fp == stdin)
         printf("\nEnter rotors' position: ");
-        
+
     while (((c = getc(fp)) != EOF) && (i <= 2))
     {
         if (c > '1' || c < '3')
@@ -96,6 +96,14 @@ Key *KeyInput(int filein, char *filename)
     }
 
     return pkey;
+}
+
+void RemoveKey(Key *pkey)
+{
+    free((void *)pkey->order);
+    free((void *)pkey->pos);
+    free((void *)pkey->plugboard);
+    free((void *)pkey);
 }
 
 char TextInput()
