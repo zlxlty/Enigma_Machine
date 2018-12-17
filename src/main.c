@@ -112,6 +112,8 @@ int main(int argc, char const *argv[]) {
         }
     }
 
+    RemoveKey(pkey);
+
     return 0;
 }
 
