@@ -1,2 +1,0 @@
-Enter a three-digit Key: ATIP
-Enter a 12-digit Plugboard: QWERTYUIOPAS
