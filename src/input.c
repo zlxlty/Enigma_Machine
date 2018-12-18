@@ -10,10 +10,10 @@
 */
 #include "input.h"
 
-char *RotorPosInput(FILE *fp)
+static char *RotorPosInput(FILE *fp)
 {
     char c;
-    int i = 1;
+    register int i = 1;
     char *tmpch = (char *)malloc(sizeof(char)*5);
     tmpch[0] = 'A';
 
@@ -30,10 +30,10 @@ char *RotorPosInput(FILE *fp)
     return tmpch;
 }
 
-char *PlugboardInput(FILE *fp)
+static char *PlugboardInput(FILE *fp)
 {
     char c;
-    int i = 0;
+    register int i = 0;
     char *tmpch = (char *)malloc(sizeof(char)*13);
 
     if (fp == stdin)
@@ -49,10 +49,10 @@ char *PlugboardInput(FILE *fp)
     return tmpch;
 }
 
-char *RotorOrderInput(FILE *fp)
+static char *RotorOrderInput(FILE *fp)
 {
     char c;
-    int i = 0;
+    register int i = 0;
     char *tmppos = (char *)malloc(sizeof(char)*4);
 
     if (fp == stdin)
