@@ -10,7 +10,7 @@
 */
 #include "rotorgroup.h"
 
-Rotorgroup *InitRotorGroup()
+static Rotorgroup *InitRotorGroup()
 {
     Rotorgroup *pRg = (Rotorgroup *)malloc(sizeof(Rotorgroup));
     int i;
@@ -66,7 +66,7 @@ Rotorgroup *SetEnigmaRotors(const char pos[3], const char key[4])
     return pRg;
 }
 
-char RightEncrypt(Rotorgroup *pRg, int index, char lttr)
+static char RightEncrypt(Rotorgroup *pRg, int index, char lttr)
 {
     if (index >= 4)
         return lttr;
@@ -78,7 +78,7 @@ char RightEncrypt(Rotorgroup *pRg, int index, char lttr)
     return RightEncrypt(pRg, index+1, tmplttr);
 }
 
-char LeftEncrypt(Rotorgroup *pRg, int index, char lttr)
+static char LeftEncrypt(Rotorgroup *pRg, int index, char lttr)
 {
     if (index <= -1)
         return lttr;
@@ -90,7 +90,7 @@ char LeftEncrypt(Rotorgroup *pRg, int index, char lttr)
     return LeftEncrypt(pRg, index-1, tmplttr);
 }
 
-char Reflector(char lttr)
+static char Reflector(char lttr)
 {
     static char reflector[27] = {_reflector};
     return reflector[lttr-'A'];

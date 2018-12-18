@@ -63,9 +63,9 @@ int main(int argc, char const *argv[]) {
             if (plaintxt == '-')
             {
                 system("clear");
-                printf("Thanks For Using Enigma\n");
+                printf("\x1b[1m\x1b[4mThanks For Using Enigma!\n\n\n\n\x1b[0m");
                 sleep(1);
-                return 0;
+                break;
             }
 
             plaintxt = PlugboardEncryption(pkey->plugboard, plaintxt);
@@ -90,9 +90,9 @@ int main(int argc, char const *argv[]) {
             if (pciphrtxt[0] == '-')
             {
                 system("clear");
-                printf("Thanks For Using Enigma\n");
+                printf("\x1b[1m\x1b[4mThanks For Using Enigma!\n\n\n\n\x1b[0m");
                 sleep(1);
-                return 0;
+                break;
             }
 
             strcpy(pkey->pos, ptmppos);

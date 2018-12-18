@@ -23,9 +23,6 @@ typedef struct _key {
     char *plugboard;
 } Key;
 
-char *RotorPosInput(FILE *);
-char *PlugboardInput(FILE *);
-char *RotorOrderInput(FILE *);
 Key *KeyInput(int filein, char *filename);
 void RemoveKey(Key *);
 char TextInput(void);
