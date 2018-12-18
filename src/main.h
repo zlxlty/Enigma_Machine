@@ -26,5 +26,4 @@ struct {
     unsigned int filein  : 1;
 } flags;
 
-
 #endif
