@@ -19,7 +19,7 @@ Enigma
 ***
 ## Getting_Started
 ### Prerequisites
-* For linux **ONLY**
+* For linux and Mac
 * gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)
 * GUN Make 4.1
 
@@ -43,11 +43,11 @@ $ make clean_objs
 ### Basic Function
 To use the encryption function in `Enigma simulator`, you just have to compile first and use terminal and type in:
 ```
-$ make run_e
+$ make run_fe
 ```
 To use the decryption function, type in
 ```
-$ make run_d
+$ make run_fd
 ```
 As most of other ciphers, `Enigma` requires key to encrypt and and decrypt messages  
 I am simulating an early version of `Enigma` which has three keys:
