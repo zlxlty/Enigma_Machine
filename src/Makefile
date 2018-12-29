@@ -12,6 +12,8 @@ objs = linked_list.o rotors.o rotorgroup.o input.o main.o
 Enigma : $(objs)
 	gcc -o Enigma $(objs)
 
+main.o : main.c main.h settings.h linked_list.h rotors.h rotorgroup.h input.h
+
 linked_list.o : linked_list.c linked_list.h settings.h
 
 rotors.o : rotors.c rotors.h linked_list.h settings.h
