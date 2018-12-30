@@ -53,6 +53,7 @@ To use the decryption function, type in
 ```
 $ make run_fd
 ```
+Type in **`-`** to end the program
 ### Customize Key
 Use
 ```
