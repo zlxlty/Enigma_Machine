@@ -54,6 +54,16 @@ To use the decryption function, type in
 $ make run_fd
 ```
 ### Customize Key
+Use
+```
+$ make run_e
+```
+to encrypt with your own key. Similarly, use
+```
+$ make run_d
+```
+for decryption  
+
 As most of other ciphers, `Enigma` requires key to encrypt and and decrypt messages  
 I am simulating an early version of `Enigma` which has three keys:
 * The Sequence of `Rotors`: A **three-digit number** made up of `1` `2` `3`
