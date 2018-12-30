@@ -19,6 +19,7 @@
 #define _MAIN_         1
 
 #define ERRORMSG "\x1b[31mError: \x1b[0m\x1b[4m%s\n\x1b[0m"
+#define EXITMSG  "\x1b[1m\x1b[4mThanks For Using Enigma!\n\n\n\n\x1b[0m"
 
 #define _plugboard "AHLOCJKXWERO"
 #define _rotor1    "AJDKSIRUXBLHWTMCQGZNPYFVOE"

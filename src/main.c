@@ -63,7 +63,7 @@ int main(int argc, char const *argv[]) {
             if (plaintxt == '-')
             {
                 system("clear");
-                printf("\x1b[1m\x1b[4mThanks For Using Enigma!\n\n\n\n\x1b[0m");
+                printf(EXITMSG);
                 sleep(1);
                 break;
             }
@@ -90,7 +90,7 @@ int main(int argc, char const *argv[]) {
             if (pciphrtxt[0] == '-')
             {
                 system("clear");
-                printf("\x1b[1m\x1b[4mThanks For Using Enigma!\n\n\n\n\x1b[0m");
+                printf(EXITMSG);
                 sleep(1);
                 break;
             }
