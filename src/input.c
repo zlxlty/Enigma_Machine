@@ -110,8 +110,12 @@ char TextInput()
 {
     char c;
     while (((c = getchar()) == EOF) || isalpha(c) == 0)
+    {
         if (c == '-')
             return c;
+        if (c != '\n')
+            fprintf(stderr, ERRORMSG, "Illegal text input");
+    }
 
     return toupper(c);
 }
