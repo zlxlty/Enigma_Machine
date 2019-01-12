@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/skylu/Desktop/Enigma_1.0.0/src/input.c
+input.h
+/home/skylu/Desktop/Enigma_1.0.0/src/input.h
+
 /home/skylu/Desktop/Enigma_1.0.0/src/input.h
 stdio.h
 -
@@ -17,6 +21,10 @@ ctype.h
 -
 settings.h
 /home/skylu/Desktop/Enigma_1.0.0/src/settings.h
+
+/home/skylu/Desktop/Enigma_1.0.0/src/linked_list.c
+linked_list.h
+/home/skylu/Desktop/Enigma_1.0.0/src/linked_list.h
 
 /home/skylu/Desktop/Enigma_1.0.0/src/linked_list.h
 stdio.h
@@ -44,6 +52,10 @@ rotorgroup.h
 input.h
 /home/skylu/Desktop/Enigma_1.0.0/src/input.h
 
+/home/skylu/Desktop/Enigma_1.0.0/src/rotorgroup.c
+rotorgroup.h
+/home/skylu/Desktop/Enigma_1.0.0/src/rotorgroup.h
+
 /home/skylu/Desktop/Enigma_1.0.0/src/rotorgroup.h
 stdio.h
 -
@@ -57,6 +69,10 @@ rotors.h
 /home/skylu/Desktop/Enigma_1.0.0/src/rotors.h
 settings.h
 /home/skylu/Desktop/Enigma_1.0.0/src/settings.h
+
+/home/skylu/Desktop/Enigma_1.0.0/src/rotors.c
+rotors.h
+/home/skylu/Desktop/Enigma_1.0.0/src/rotors.h
 
 /home/skylu/Desktop/Enigma_1.0.0/src/rotors.h
 stdio.h
