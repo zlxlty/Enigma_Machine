@@ -1,7 +1,7 @@
 /*
 * =================================================
 *       Filename:  linked_list.c
-*        Version:  1.0.0
+*        Version:  1.1.0
 *        Created:  12/15/18 09:48:25
 *       Compiler:  gcc
 *         Coding:  UTF-8
