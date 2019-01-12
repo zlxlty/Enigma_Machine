@@ -57,8 +57,12 @@ int main(int argc, char const *argv[]) {
         while (1)
         {
             Rotorgroup* pEnigma = SetEnigmaRotors(pkey->order, pkey->pos);
-            printf("\nEnter one digit Plaintext: ");
-            plaintxt = TextInput();
+
+            do 
+            {
+                printf("\nEnter one digit Plaintext: ");
+                plaintxt = TextInput();
+            } while (plaintxt == -1);
 
             if (plaintxt == '-')
             {
@@ -84,8 +88,13 @@ int main(int argc, char const *argv[]) {
         while (1)
         {
             char *pciphrtxt;
-            printf("\nEnter the ciphertext: ");
-            pciphrtxt = StringInput(1000);
+
+            do
+            {
+                printf("\nEnter the ciphertext: ");
+                pciphrtxt = StringInput(MAXINPUT);
+
+            } while (strlen(pciphrtxt) == 0);
 
             if (pciphrtxt[0] == '-')
             {

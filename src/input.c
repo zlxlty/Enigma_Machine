@@ -114,7 +114,10 @@ char TextInput()
         if (c == '-')
             return c;
         if (c != '\n')
+        {
             fprintf(stderr, ERRORMSG, "Illegal text input");
+            return -1;
+        }
     }
 
     return toupper(c);
@@ -125,28 +128,29 @@ char *StringInput(int size)
     int i = 0;
     char *str = (char *)malloc(sizeof(char)*size);
     char c;
-    while ((c = getchar()) != '-' && i < size-1)
+    while ((c = getchar()) != EOF && i < size-1)
     {
-        // putchar(c);
+
+        if (c == '-')
+        {
+            str[0] = c;
+            str[1] = '\0';
+            return str;
+        }
+    
         if (c != '\n' && isalpha(c) == 0)
             continue;
-        // printf("Hello\n");
+
         if (c == '\n')
         {
             str[i] = '\0';
             return str;
         }
 
-        // printf("Hello\n");
         str[i++] = toupper(c);
     }
 
-    if (c == '-')
-    {
-        str[0] = c;
-        str[1] = '\0';
-        return str;
-    }
+
 }
 
 void KeyRotation(char *key)

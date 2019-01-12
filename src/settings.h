@@ -29,4 +29,6 @@
 #define _reflector "YRUHQSLDPXNGOKMIEBFZCWVJAT"
 #define _alphabet  "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+#define MAXINPUT 1000
+
 #endif
