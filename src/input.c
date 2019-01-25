@@ -60,7 +60,7 @@ static char *RotorOrderInput(FILE *fp)
 
     while (((c = getc(fp)) != EOF) && (i <= 2))
     {
-        if (c > '1' || c < '3')
+        if (c >= '1' && c <= '3')
             tmppos[i++] = c;
     }
 
