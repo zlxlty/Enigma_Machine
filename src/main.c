@@ -66,6 +66,7 @@ int main(int argc, char const *argv[]) {
 
             if (plaintxt == '-')
             {
+                RemoveRotorGroup(pEnigma);
                 system("clear");
                 printf(EXITMSG);
                 sleep(1);

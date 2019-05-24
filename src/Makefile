@@ -116,7 +116,7 @@ run_e:
 .PHONY : run_e
 
 run_d:
-	./Enimga -d
+	./Enigma -d
 .PHONY : run_d
 
 run_fd:
