@@ -1,7 +1,7 @@
 Enigma
 ======
 
-### This is a simulator of `Enigma Machine` which is a kind of mechanical cipher used by Germany army in the WW2.
+### This is a simulator of `Enigma Machine` --- a classic mechanical cipher used in WW2.
 
 ****
 
