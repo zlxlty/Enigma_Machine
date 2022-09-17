@@ -103,8 +103,8 @@ The configuration of the rotors are as follow:
 
 ****
 
-|Author|SkyL|
+|Author|Tianyi Lu|
 |---|---|
-|E-mail|2924312854@qq.com|
+|E-mail|lus2@carleton.edu|
 
 ****
